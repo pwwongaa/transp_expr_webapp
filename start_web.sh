@@ -9,8 +9,8 @@ echo "Starting frontend in client/..."
 ) &  # run in background
 
 # 2. Activate Conda environment for your backend
-echo "Activating Conda environment 'ucl_webapp'..."
-source activate ucl_webapp
+echo "Activating Conda environment 'transcp_webapp'..."
+source activate transcp_webapp
 
 # 3. Start the backend with Uvicorn
 echo "Starting FastAPI backend in server/..."
