@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        /* font-style Helvetica stack */
+        @apply font-sans;
+        /* background grey */
+        @apply bg-blue-900;
+        /* 深灰背景 */
+        /* @apply text-white; */
+        /* white wording */
+        margin: 0;
+        /* remove margin */
+        line-height: 1.6;
+        /* increase readibility */
+    }
+
+    a {
+        @apply text-blue-400 hover:underline;
+        /* Full Web format */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold text-blue-100;
+        /* Title style */
+        margin-top: 0;
+        /* upper margin */
+    }
+
+    p {
+        @apply mb-4;
+        /* Lower margin */
+    }
+
+    img {
+        max-width: 100%;
+        /* Picture format */
+        height: auto;
+    }
+}
