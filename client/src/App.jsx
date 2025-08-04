@@ -11,8 +11,8 @@ import Upload from './pages/Upload';
 
 function App() {
   return (
-    //Browser router
-    <BrowserRouter>
+    //Browser router, add  basename="/transp_expr_webapp"> for GH page
+    <BrowserRouter basename="/transp_expr_webapp">
       <Routes>
         {/* Routes, use / as root to wrap all pages */}
         <Route path="/" element={<Layout />}>
