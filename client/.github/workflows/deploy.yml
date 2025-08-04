@@ -9,6 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    defaults:
+      runs:
+        working-directory: client
+
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
