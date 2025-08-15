@@ -9,7 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist -b gh-pages"
+    "deploy": "gh-pages -d dist -b gh-pages -m \"Deploy $(date -u '+%Y-%m-%dT%H:%M:%SZ')\" -r https://x-access-token:${GH_TOKEN}@github.com/pwwongaa/rna_ucl_web_app.git"
   },
   "dependencies": {
     "axios": "^1.10.0",
