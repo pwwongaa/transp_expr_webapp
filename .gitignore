@@ -1,14 +1,14 @@
-client/node_modules
+kclient/node_modules
+client/dist
 client/.env
 client/.env.production
-.env
-client/dist
 **/.DS_Store
-server/nohup.out
-server/app.log
+.env
+.env.*
+node_modules/
+dist/
 __pycache__/
 *.pyc
-.env.*
 .venv/
 venv/
 ENV/
@@ -16,3 +16,6 @@ uploads/
 tmp/
 nohup.out
 *.log
+server/nohup.out
+server/app.log
+
