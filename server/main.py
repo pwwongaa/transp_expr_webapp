@@ -19,6 +19,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 # add CORS middleware - allow react front end access
+<<<<<<< HEAD
 
 #* need to allow picture CORS
 # app.add_middleware(
