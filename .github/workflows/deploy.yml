@@ -2,37 +2,54 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch: {}
 
 permissions:
-  contents: write   # allow push to gh-pages
+  contents: write   # allow pushing to gh-pages
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: client
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the app
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        run: npx gh-pages -d dist -b gh-pages -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+      - name: SPA fallback (optional)
+        run: cp dist/index.html dist/404.html
+
+      # ✅ Set author identity so gh-pages can commit
+      - name: Set git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # ✅ Ensure pushes use an authenticated remote
+      - name: Set authenticated origin
+        run: git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to gh-pages (gh-pages CLI)
+        run: npx gh-pages -d dist -b gh-pages -m "Deploy $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
 
