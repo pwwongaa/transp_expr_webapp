@@ -6,3 +6,5 @@ export default defineConfig({
   base: '/transp_expr_webapp/',
   plugins: [react()],
 })
+
+
