@@ -4,3 +4,7 @@ client/.env.production
 .env
 client/dist
 **/.DS_Store
+__pycache__/
+*.pyc
+server/nohup.out 
+server/app.log
