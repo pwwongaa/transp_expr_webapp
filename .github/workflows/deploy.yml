@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write   # allow push to gh-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -29,6 +32,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: npx gh-pages -d dist -b gh-pages -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
