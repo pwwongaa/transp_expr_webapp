@@ -1,4 +1,3 @@
-//Import
 // src/pages/Upload.jsx
 import axios from 'axios'; //HTTP request
 import { useState } from 'react'; //React hook to manage local state
