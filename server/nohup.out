@@ -1,0 +1,40 @@
+INFO:     Started server process [1861]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     104.28.89.69:19740 - "GET /docs HTTP/1.1" 200 OK
+INFO:     104.28.89.69:19918 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     104.28.89.76:38690 - "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 Not Found
+INFO:     104.28.89.76:38690 - "GET /apple-touch-icon.png HTTP/1.1" 404 Not Found
+INFO:     104.28.89.76:26484 - "GET /result-files?extension=png HTTP/1.1" 200 OK
+INFO:     104.28.89.76:55626 - "GET / HTTP/1.1" 200 OK
+INFO:     104.28.89.76:55626 - "GET / HTTP/1.1" 200 OK
+INFO:     104.28.89.76:13610 - "GET /docs HTTP/1.1" 200 OK
+INFO:     104.28.89.76:13610 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     104.28.89.76:13610 - "GET /docs HTTP/1.1" 200 OK
+INFO:     104.28.89.76:13610 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     104.28.89.76:13610 - "GET / HTTP/1.1" 200 OK
+INFO:     104.28.89.76:13610 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1861]
