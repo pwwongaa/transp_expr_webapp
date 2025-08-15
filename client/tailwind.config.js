@@ -4,7 +4,7 @@ export default {
   content: [
     './index.html',
     './src/**/*.{js,jsx,ts,tsx,css}',
-    './src/.index.css'
+    './src/index.css'
   ],
   theme: {
     extend: {
@@ -17,7 +17,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Helvetica', 'Arial', 'sans-serif'],
+        //sans: ['Helvetica', 'Arial', 'sans-serif'],
+        sans: ['ui-sans-serif', 'system-ui'],
       },
       colors: {
         industrial: {
