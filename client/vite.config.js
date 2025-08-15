@@ -5,9 +5,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/transp_expr_webapp/',
   plugins: [react()],
-  build: {
-  outDir: 'docs'
-  }
+  build: { outDir: 'dist'} 
 })
 
 
+  ?
