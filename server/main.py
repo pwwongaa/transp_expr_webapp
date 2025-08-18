@@ -201,3 +201,8 @@ def get_result(filename: str):
 @app.get("/result-files", response_model=List[str]) #respone you the list
 def list_results(extension: str = "png"):
     return [f.name for f in RESULT_DIR.glob(f"*.{extension}")]
+
+#health check route
+@app.get("/health")
+def health():
+    return {"status": "ok"}
