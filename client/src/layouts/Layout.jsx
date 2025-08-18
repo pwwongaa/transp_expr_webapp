@@ -14,7 +14,7 @@ export default function Layout() {
       <main className="flex-1 flex justify-center items-center w-full px-4 py-8">
         {/* Optional: Limit height of main content */}
         <div className="w-full max-w-2xl">
-          <Outlet />
+          <Outlet /> {/* <-- required for child routes */}
         </div>
       </main>
     </div>

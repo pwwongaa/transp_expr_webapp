@@ -32,6 +32,13 @@ jobs:
       - name: Build the app
         run: npm run build
 
+      - name: Show built files (sanity), make failures obvious
+        run: |
+          echo "== dist =="
+          ls -la dist
+          echo "== index.html head =="
+          head -n 30 dist/index.html
+
       - name: SPA fallback (optional)
         run: cp dist/index.html dist/404.html
 
