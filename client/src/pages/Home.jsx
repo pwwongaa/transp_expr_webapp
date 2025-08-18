@@ -8,26 +8,43 @@ import { API_BASE } from '../api/api'; // Hosting: import your API base URL
 export default function Home() {
   
   const navigate = useNavigate() //for navigation
-  //Reset start - automatic execution
-  //execute the fastapi backend - /reset route to execute this reset
-  useEffect(() => {
-    // axios.post('http://localhost:8000/reset')
-    axios.post(`${API_BASE}/reset`)
-      .catch(err => console.error('Reset failed:', err))
-  }, [])
 
-  // Test BE FE connection
-  const [connected, setConnected] = useState(null);
+  //Reset start - automatic execution
+  // //execute the fastapi backend - /reset route to execute this reset
+  // useEffect(() => {
+  //   // axios.post('http://localhost:8000/reset')
+  //   axios.post(`${API_BASE}/reset`)
+  //     .catch(err => console.error('Reset failed:', err))
+  // }, [])
+
+  // 1) Probe connectivity with GET /health, NOT using /reset twice
   useEffect(() => {
-    axios.post(`${API_BASE}/reset`)
-      .then(() => setConnected(true))
-      .catch(err => {
-        console.error('Connection failed:', err);
-        setConnected(false);
-      });
+    let cancelled = false;
+    axios.get(`${API_BASE}/health`)
+      .then(() => !cancelled && setConnected(true))
+      .catch(() => !cancelled && setConnected(false));
+    return () => { cancelled = true; };
   }, []);
 
 
+  // 2) Only reset after connection is established
+  // Test BE FE connection
+  const [connected, setConnected] = useState(null);
+  // useEffect(() => {
+  //   axios.post(`${API_BASE}/reset`)
+  //     .then(() => setConnected(true))
+  //     .catch(err => {
+  //       console.error('Connection failed:', err);
+  //       setConnected(false);
+  //     });
+  // }, []);
+
+  useEffect(() => {
+    if (connected === true) {
+      axios.post(`${API_BASE}/reset`)
+        .catch(err => console.warn("Reset failed (non-fatal):", err?.response?.status));
+    }
+  }, [connected]);
 
   // Main content
   return (
