@@ -145,14 +145,25 @@ def pipeline_job():
 
         #! pipeline execution
         time.sleep(1)   
+        # subprocess.run(
+        #     # [sys.executable, "pipeline/runner.py"],
+        #     [CONDA_PYTHON, "/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/pipeline/runner.py"],
+        #     # cwd=".",  # ensure runner.py sees the data folder
+        #     cwd="/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/",
+        #     check=True,
+        #     capture_output=True,
+        #     text=True)
         subprocess.run(
-            # [sys.executable, "pipeline/runner.py"],
-            [CONDA_PYTHON, "/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/pipeline/runner.py"],
-            # cwd=".",  # ensure runner.py sees the data folder
-            cwd="/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/",
-            check=True,
-            capture_output=True,
-            text=True)
+        [
+            "systemd-run", "--scope", "-p", "MemoryMax=3G",
+            CONDA_PYTHON,
+            "/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/pipeline/runner.py"
+        ],
+        cwd="/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/",
+        check=True,
+        capture_output=True,
+        text=True
+        )
         time.sleep(1)   
         # If you catch exceptions in here, set error below
         # -------------------------------------------

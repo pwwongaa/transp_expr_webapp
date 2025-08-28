@@ -191,7 +191,7 @@ def plot_umap(expr_df: pd.DataFrame,
     scaled_data = StandardScaler().fit_transform(expr_df)
 
     #? --- 3. Reduce to 30 PC dimensions (faster UMAP) ---
-    pca_data = PCA(n_components=30).fit_transform(scaled_data)
+    pca_data = PCA(n_components=10).fit_transform(scaled_data)
 
     # --- 4. UMAP ---
     reducer = umap.UMAP(n_components=2, random_state=42)
@@ -289,7 +289,7 @@ def main():
     #iv. exploratory PCA: group by conditions 
 
 
-    sc.pp.neighbors(adata, n_neighbors=10, n_pcs=30)  # builds the neighbour graph
+    sc.pp.neighbors(adata, n_neighbors=5, n_pcs=30)  # builds the neighbour graph
     sc.tl.umap(adata)  # Running UMAP, computes the UMAP and stores in .obsm["X_umap"]
     sc.tl.leiden(adata, resolution=0.5, flavor="igraph", directed=False, n_iterations=2)
 
