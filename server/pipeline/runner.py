@@ -24,7 +24,8 @@ from statsmodels.stats.multitest import multipletests  # FDR p-value
 BASE_DIR = Path("/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server") #!AWS EC2
 DATA_DIR = BASE_DIR / 'data'
 RESULT_DIR = BASE_DIR / 'results'
-RESULT_DIR.mkdir(exist_ok=True, parents=True) #if not make a dir, avoid error
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+RESULT_DIR.mkdir(parents=True, exist_ok=True)#if not make a dir, avoid error
 
 # EXPR_FILE = "../data/GSE138852_pseudobulk_astro_counts.csv"
 # META_FILE = "../data/GSE138852_pseudobulk_astro_metadata.csv"
