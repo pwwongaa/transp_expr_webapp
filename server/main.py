@@ -149,7 +149,7 @@ def pipeline_job():
             # [sys.executable, "pipeline/runner.py"],
             [CONDA_PYTHON, "/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/pipeline/runner.py"],
             # cwd=".",  # ensure runner.py sees the data folder
-            cwd="/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/"
+            cwd="/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/",
             check=True,
             capture_output=True,
             text=True)
