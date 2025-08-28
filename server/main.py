@@ -144,7 +144,8 @@ def pipeline_job():
         #! pipeline execution
         time.sleep(1)   
         subprocess.run(
-            [sys.executable, "pipeline/runner.py"],
+            # [sys.executable, "pipeline/runner.py"],
+            [sys.executable, "/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server/pipeline/runner.py"],
             # cwd=".",  # ensure runner.py sees the data folder
             cwd=os.getcwd(),
             check=True,
