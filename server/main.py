@@ -44,11 +44,13 @@ app.add_middleware(
 
 
 #? essential dirs
-UPLOAD_DIR = Path("./data") #upload dir
+# UPLOAD_DIR = Path("./data") #upload dir
+UPLOAD_DIR = Path("/hosting_transcp_webapp/transp_expr_webapp/server/data") #!AWS EC2
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True) #auto make a dir if not exist
 DATA_DIR = UPLOAD_DIR
 
-RESULT_DIR = Path("./results")
+# RESULT_DIR = Path("./results")
+RESULT_DIR = Path("/hosting_transcp_webapp/transp_expr_webapp/server/results") #!AWS EC2
 RESULT_DIR.mkdir(parents=True, exist_ok=True)
 
 # mount to drive
