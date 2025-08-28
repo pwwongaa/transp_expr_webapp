@@ -21,7 +21,7 @@ from statsmodels.stats.multitest import multipletests  # FDR p-value
 ##pipeline/runner.py
 ##data/xxx.csv
 # BASE_DIR = Path(__file__).parent.parent.resolve()  # server/pipeline -> server
-BASE_DIR = Path("/hosting_transcp_webapp/transp_expr_webapp/server") #!AWS EC2
+BASE_DIR = Path("/home/ubuntu/hosting_transcp_webapp/transp_expr_webapp/server") #!AWS EC2
 DATA_DIR = BASE_DIR / 'data'
 RESULT_DIR = BASE_DIR / 'results'
 RESULT_DIR.mkdir(exist_ok=True, parents=True) #if not make a dir, avoid error
