@@ -34,8 +34,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",  # dev
-        "https://pwwongaa.github.io",  # your GH Page, 
+        "https://pwwongaa.github.io",
+        "http://localhost:5173"
     ],
     allow_credentials=True,
     allow_methods=["*"],
