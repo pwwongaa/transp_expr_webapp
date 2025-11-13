@@ -1,7 +1,7 @@
 # Expression WebApp
 
 **Status**: In development 
-**Disclaimer**: For personal practice only. Not validated. 
+**Disclaimer**: For personal practice only.
 
 ---
 
