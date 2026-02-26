@@ -1,7 +1,7 @@
 # Expression WebApp
 
-**Status**: In development 
-**Disclaimer**: For personal practice only.
+- **Status**: In development, backend: OFF currently
+- **Disclaimer**: For personal practice only.
 
 ---
 
@@ -10,7 +10,7 @@
 A simple web app that takes user input (e.g. biological or mathematical expressions) and returns interpreted results.
 
 - Frontend: React.js/Vite on GitHub Pages  
-- Backend: FastAPI on AWS EC2  
+- Backend: FastAPI on AWS EC2 (status: OFF)
 - Purpose: Practice full-stack app development and software engineering skills
 - Other techs: GitHub Acition CI/CD, Docker, HTML/Tailwind CSS/JS
 
